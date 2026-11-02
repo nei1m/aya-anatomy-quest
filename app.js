@@ -1,4 +1,4 @@
-/* Aya’s Anatomy Quest — app engine (no dependencies). Progress lives in localStorage. */
+/* Ayah’s Anatomy Quest — app engine (no dependencies). Progress lives in localStorage. */
 (() => {
 "use strict";
 const KEY = "ayaanatomy_v1";
@@ -25,7 +25,7 @@ function itemMins(it) {
 const lessonMins = L => Math.max(3, Math.round(L.items.reduce((s, it) => s + itemMins(it), 0) * 1));
 
 /* ---------- state ---------- */
-const fresh = () => ({ petals: 0, done: {}, wrong: {}, journal: {}, badges: {}, secs: 0, streak: { last: null, n: 0 }, name: "Aya", answered: 0, correct: 0, examBest: null });
+const fresh = () => ({ petals: 0, done: {}, wrong: {}, journal: {}, badges: {}, secs: 0, streak: { last: null, n: 0 }, name: "Ayah", answered: 0, correct: 0, examBest: null });
 let S;
 try { S = Object.assign(fresh(), JSON.parse(localStorage.getItem(KEY) || "{}")); } catch { S = fresh(); }
 const save = () => localStorage.setItem(KEY, JSON.stringify(S));
@@ -100,7 +100,7 @@ function modal(html, btn = "Yay!", onClose) {
 function topbar() {
   const lv = level();
   const t = el("header", "topbar");
-  t.innerHTML = `<div class="tb-left"><span class="logo">🌸</span><div><b>Aya’s Anatomy Quest</b><small>${esc(lv.name)}</small></div></div>
+  t.innerHTML = `<div class="tb-left"><span class="logo">🌸</span><div><b>Ayah’s Anatomy Quest</b><small>${esc(lv.name)}</small></div></div>
     <div class="tb-stats"><span title="Petals">🌸 ${S.petals}</span><span title="Day streak">🔥 ${S.streak.n}</span></div>
     <div class="lvbar"><i style="width:${Math.round(lv.pct * 100)}%"></i></div>`;
   return t;
@@ -596,7 +596,7 @@ function renderCert() {
   const d = new Date().toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" });
   const m = el("main", "certwrap");
   m.innerHTML = `<div class="cert"><div class="c-flower">🌸</div><div class="kicker">Certificate of completion</div>
-    <h1>${esc(name)}</h1><p>completed every lesson of</p><h2>Aya’s Anatomy Quest</h2>
+    <h1>${esc(name)}</h1><p>completed every lesson of</p><h2>Ayah’s Anatomy Quest</h2>
     <p>Anatomy Basics · Nervous System · Upper Limb</p>
     <div class="c-row"><div><b>${S.examBest ?? "—"}%</b><span>mock midterm</span></div><div><b>${S.petals}</b><span>petals</span></div><div><b>${fmtTime(S.secs)}</b><span>studied</span></div></div>
     <p class="c-badges">${COURSE.weeks.map(w => S.badges[w.id] ? w.badge.icon : "").join(" ")} ${S.badges.exam ? "🏆" : ""}</p>

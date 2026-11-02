@@ -2324,7 +2324,7 @@ EXAMQ.push({t:'mcq',unit:3,mod:'u6',q:'Regarding the lumbrical muscles, which st
 
 
 MODULES.sort((a,b)=>a.num-b.num);
-var COURSE={title:"Aya’s Anatomy Quest",subtitle:"Anatomy Basics · Nervous System · Upper Limb — Units 1–3",
+var COURSE={title:"Ayah’s Anatomy Quest",subtitle:"Anatomy Basics · Nervous System · Upper Limb — Units 1–3",
  units:{1:"Anatomy Basics",2:"Nervous System",3:"Upper Limb"},weeks:MODULES,
  exam:{id:"exam",title:"Mock Midterm",mins:120,flower:"🏆",
   blurb:EXAMQ.length+" multiple-choice questions in exam order (Unit 1 → Unit 3), weighted like the real exam. Answers revealed at the end. Aim for 70%+.",
